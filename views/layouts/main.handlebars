@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toughts</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer src="/js/script.js"></script>
+</head>
+<body>
+
+    <nav class="container-navbar-wrapper">
+
+        <a href="/">
+            <img src="https://i.pinimg.com/originals/70/79/8b/70798bc435aa28dfb9651ed7f05f2fc7.png" alt="logo">
+        </a>
+
+        <div class="control-navbar">
+            <a href="/">Pensamentos</a>
+            {{#if session.userid}}
+                <a href="/toughts/dashboard">Dashboard</a>
+                <a href="/logout">Sair</a>
+            {{else}}
+                <a href="/login">Entrar</a>
+                <a href="/register">Registrar</a>
+            {{/if}}
+        </div>
+    </nav>
+
+    <div class="container-main">
+        {{#if messages.message}}
+            <div class="system-error-password">
+                {{messages.message}}
+            </div>
+          
+        {{/if}}
+        {{{body}}}
+    </div>
+
+    <footer class="container-footer-wrapper">
+        <p>
+            <span>Toughts</span>  &copy, 2023
+        </p>
+    </footer>
+</body>
+</html>

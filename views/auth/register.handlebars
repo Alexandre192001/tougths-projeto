@@ -1,0 +1,29 @@
+<h1 class="title-home">Register</h1>
+
+<form class="container-form-wrapper" action="/register" method="POST">
+
+    <div class="form-control">
+        <label for="nome">Nome:</label>
+        <input autocomplete="off" required type="text" name="name" placeholder="Informe seu nome aqui">
+    </div>
+
+
+    <div class="form-control">
+        <label  for="email">Email:</label>
+        <input autocomplete="off" required type="email" name="email" placeholder="Informe seu email aqui">
+    </div>
+
+    <div class="form-control">
+        <label for="senha">Senha:</label>
+        <input autocomplete="off" required type="password" name="password" placeholder="Informe sua senha aqui">
+    </div>
+
+    <div class="form-control">
+        <label for="confirmpassword">Confirmação de senha:</label>
+        <input autocomplete="off" required type="password" name="confirmpassword" placeholder="Confirme sua senha">
+    </div>
+
+    <p class="conta-existente">Já tem conta ? <a href="/login">Clique aqui</a></p>
+
+    <input type="submit" value="Cadastrar usúario">
+</form>
