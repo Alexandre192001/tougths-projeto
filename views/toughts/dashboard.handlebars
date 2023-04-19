@@ -6,13 +6,21 @@
         </a>
     </div>
     <h3>Seus pensamentos</h3>
-
+ <div class="container-pensamento-wrapper">
     {{#each toughts}}
-    <div class="container-pensamento-wrapper">
-        <div class="pensamentos">
-            <li>{{this.title}}</li>
+        <div class="container-pensamentos">
+            <div class="pensamentos">
+                <h1>{{this.title}}</h1>
+            </div>
+
+            <div class="actions">
+                    <a class="btn" href="/toughts/edit/{{this.id}}">Editar</a>
+                <form action="/toughts/delete" method="POST">
+                    <input type="hidden" name="id" value="{{this.id}}">
+                    <input class="btn" type="submit" value="Excluir">
+                </form>
+            </div>
         </div>
-    </div>
-        
     {{/each}}
+    </div>
 </div>

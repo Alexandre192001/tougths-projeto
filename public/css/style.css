@@ -27,6 +27,15 @@
   text-decoration: none;
 }
 
+p {
+  margin: 1rem;
+  text-align: center;
+  color: #fff;
+}
+p span {
+  color: #d8f62a;
+}
+
 .title-container {
   display: flex;
   align-items: center;
@@ -38,13 +47,7 @@
 .container-main {
   min-height: 80vh;
 }
-.container-main .dashboard .title-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-.container-main .dashboard .title-container .btn {
+.container-main .btn {
   background-color: #d8f62a;
   text-decoration: none;
   padding: 1rem;
@@ -53,13 +56,83 @@
   color: #000;
   transition: all 0.4s ease;
 }
-.container-main .dashboard .title-container .btn:hover {
+.container-main .btn:hover {
   background-color: transparent;
   color: #fff;
+}
+.container-main .dashboard .title-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
 }
 .container-main .dashboard h3 {
   color: #fff;
   margin: 1rem;
+}
+.container-main .dashboard .container-pensamento-wrapper {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos {
+  width: 30rem;
+  height: 20rem;
+  background-color: #d8f62a;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  position: relative;
+  border-radius: 1rem;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  background: #d8f62a;
+  padding: 1rem;
+  gap: 4rem;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions a {
+  background-color: #2e2e2e;
+  width: 10rem;
+  text-align: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions a:hover {
+  background-color: #d8f62a;
+  color: #000;
+  border: solid 1px #000;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions form {
+  background-color: #d8f62a;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions form input[type=submit] {
+  background-color: #2e2e2e;
+  cursor: pointer;
+  color: #fff;
+  width: 10rem;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .actions form input[type=submit]:hover {
+  background-color: #d8f62a;
+  color: #000;
+  border: solid 1px #000;
+}
+.container-main .dashboard .container-pensamento-wrapper .container-pensamentos .pensamentos {
+  position: absolute;
+  padding: 1rem;
+  top: 0;
+  left: 0;
+  border: solid 1px #d8f62a;
 }
 .container-main .system-error-password {
   color: #fff;
@@ -137,6 +210,65 @@
   border-radius: 0.4rem;
   outline: none;
   color: #fff;
+}
+
+.home-header .search-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.home-header .search-container input[type=text] {
+  padding: 1rem;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+  border: none;
+  width: 30rem;
+  border: solid 1px #d8f62a;
+  border-radius: 0.4rem;
+}
+.home-header .order-container {
+  gap: 2rem;
+  margin-top: 1rem;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+}
+.home-header .order-container form button {
+  border: none;
+  padding: 1rem 2rem;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 0.4rem;
+  border: solid 2px #d8f62a;
+}
+.home-header .order-container a {
+  color: #fff;
+}
+
+.toughts-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-direction: column;
+  gap: 2rem;
+  font-size: 2rem;
+  color: #fff;
+}
+.toughts-container figure {
+  width: 90%;
+  border-bottom: solid 2px #d8f62a;
+  margin: 0.4rem;
+}
+.toughts-container figure blockquote {
+  font-style: italic;
+  font-size: 4rem;
+}
+.toughts-container figure figcaption span {
+  color: #d8f62a;
 }
 
 .container-footer-wrapper {
