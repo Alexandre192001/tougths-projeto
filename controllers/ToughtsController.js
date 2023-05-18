@@ -4,16 +4,15 @@ const {Op} = require('sequelize')
 
 module.exports = class ToughtController {
     static async showToughts(req, res) {
-
+        
         let search = ''
 
         if(req.query.search){
             search=req.query.search
         }
-
         let order = 'DESC'
-
         if(req.query.order==='old'){
+            
             order = 'ASC'
         } else{
             order = 'DESC'
@@ -35,6 +34,8 @@ module.exports = class ToughtController {
         res.render('toughts/home', {toughts,search,toughtsQty})
     }
 
+
+    
     static async dashboard(req, res) {
 
         const userid = req.session.userid
@@ -52,6 +53,8 @@ module.exports = class ToughtController {
 
         res.render('toughts/dashboard',{toughts})
     }
+
+
     static async createTougthtCreate(req, res) {
         const toughts = {
             title: req.body.title,
@@ -65,6 +68,8 @@ module.exports = class ToughtController {
             })
         } catch (error) {console.log(error)}
     }
+
+
     static async removeTought(req,res){
         try {
             const id = req.body.id
@@ -76,6 +81,9 @@ module.exports = class ToughtController {
             })
         } catch (error) {console.log(error) }
     }
+
+
+
     static async updateToughtSave(req,res){
         try {
             const id = req.body.id
@@ -89,11 +97,18 @@ module.exports = class ToughtController {
         })  
         } catch (error) {console.log(error)}
     }
+
+
+
     static async updateTought(req,res){
         const id = req.params.id
         const tought = await Tought.findOne({raw:true,where:{id:id}})
         res.render('toughts/edit', {tought})
     }
+
+
+
+
     static createTought(req, res) {
         res.render('toughts/create')
     }

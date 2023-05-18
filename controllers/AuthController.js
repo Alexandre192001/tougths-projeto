@@ -62,6 +62,6 @@ module.exports = class AuthController{
     }
     static logout(req,res){
         req.session.destroy()
-        res .redirect('/login')
+        res.redirect('/login')
     }   
 }
