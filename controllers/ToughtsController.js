@@ -3,21 +3,17 @@ const User = require("../models/User")
 const {Op} = require('sequelize')
 
 module.exports = class ToughtController {
-    static async showToughts(req, res) {
-        
+    static async showToughts(req, res) {   
         let search = ''
-
         if(req.query.search){
             search=req.query.search
         }
         let order = 'DESC'
-        if(req.query.order==='old'){
-            
+        if(req.query.order==='old'){         
             order = 'ASC'
         } else{
             order = 'DESC'
         }
-
         const toughtsData = await Tought.findAll({
             include:User,
             where:{
@@ -30,31 +26,20 @@ module.exports = class ToughtController {
         if(toughtsQty===0){
             toughtsQty=false
         }
-
-        res.render('toughts/home', {toughts,search,toughtsQty})
-    }
-
-
-    
+        res.render('toughts/home', {toughts,search,toughtsQty})}
     static async dashboard(req, res) {
-
         const userid = req.session.userid
         const user = await User.findOne({
             where:{id:userid},
             include:Tought,
             plain:true,
         })
-
         if(!user){
             res.redirect('/login')
         }
-
         const toughts = user.Toughts.map((result)=>result.dataValues)
-
         res.render('toughts/dashboard',{toughts})
     }
-
-
     static async createTougthtCreate(req, res) {
         const toughts = {
             title: req.body.title,
@@ -68,8 +53,6 @@ module.exports = class ToughtController {
             })
         } catch (error) {console.log(error)}
     }
-
-
     static async removeTought(req,res){
         try {
             const id = req.body.id
@@ -81,9 +64,6 @@ module.exports = class ToughtController {
             })
         } catch (error) {console.log(error) }
     }
-
-
-
     static async updateToughtSave(req,res){
         try {
             const id = req.body.id
@@ -97,17 +77,11 @@ module.exports = class ToughtController {
         })  
         } catch (error) {console.log(error)}
     }
-
-
-
     static async updateTought(req,res){
         const id = req.params.id
         const tought = await Tought.findOne({raw:true,where:{id:id}})
         res.render('toughts/edit', {tought})
     }
-
-
-
 
     static createTought(req, res) {
         res.render('toughts/create')
